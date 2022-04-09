@@ -1,5 +1,6 @@
 from sudoku import Solver
 import os
+import time
 
 
 
@@ -20,9 +21,11 @@ for test in os.listdir('tests'):
             board.append(line.strip().split(' '))
         display(board)
         solver = Solver()
+        start = time.time()
         solver.solveSudoku(board)
-
-        print('Solved:')
+        end = time.time()
+        print('Solved: ~', end - start)
         display(board)
+
         print('Is valid solution? ', solver.validSudoku(board, all_options))
     
