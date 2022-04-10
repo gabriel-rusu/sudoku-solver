@@ -1,6 +1,6 @@
 import heapq
 
-class Solver:
+class Sudoku:
     
     def line_options(self, i, board) -> set:
         options = set();
