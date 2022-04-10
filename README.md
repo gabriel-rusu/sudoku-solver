@@ -11,7 +11,7 @@
 
 </div>
 
-<p align="center"> Few lines describing your project.
+<p align="center"> An A.I app that aims at solving every possible sudoku in an efficient manner
     <br> 
 </p>
 
