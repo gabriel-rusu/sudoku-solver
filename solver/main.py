@@ -2,8 +2,6 @@ from models.sudoku import Sudoku
 import os
 import time
 
-
-
 def display(board):
     for line in board:
         for element in line:
