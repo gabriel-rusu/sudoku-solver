@@ -51,9 +51,6 @@ class Sudoku:
         
         
     def solveSudoku(self, board) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
         all_options = {str(i) for i in range(1, 10)}
         restart = False
         for i in range(len(board)):
