@@ -16,7 +16,7 @@ class Sudoku:
                 options.add(board[j][i])
         return options;
     
-    def unitOptions(self, i_start, j_start, board, li = False):
+    def unit_options(self, i_start, j_start, board, li = False):
         options = set()
         for i in range(3*i_start, 3*(i_start + 1)):
             for j in range(3*j_start, 3*(j_start + 1)):
@@ -30,7 +30,7 @@ class Sudoku:
     def options_of(self, i, j ,board, all_options):
         lineExclusion = self.line_options(i, board)
         colExclusion = self.col_options(j, board)
-        unitExclusion = self.unitOptions(i//3, j//3, board)
+        unitExclusion = self.unit_options(i//3, j//3, board)
         options = all_options - lineExclusion - colExclusion - unitExclusion
         return options
     
@@ -72,7 +72,7 @@ class Sudoku:
         self.solveEmpty(positions, all_options, board)
         
     def solveEmpty(self, positions, all_options, board):
-        if self.validSudoku(board, all_options):
+        if self.valid_sudoku(board, all_options):
             return True
         _, i, j = heapq.heappop(positions)
         options = self.options_of(i, j, board, all_options)
@@ -84,8 +84,7 @@ class Sudoku:
             board[i][j] = '.'
             heapq.heappush(positions, (len(options), i, j))
             
-    def validSudoku(self,board, all_options):
-        
+    def valid_sudoku(self,board, all_options):
         for i in range(len(board)):
             line = set()
             for j in range(len(board[i])):
@@ -104,6 +103,12 @@ class Sudoku:
 
         for i in range(3):
             for j in range(3):
-                if len(all_options) != len(self.unitOptions(i, j, board)):
+                if len(all_options) != len(self.unit_options(i, j, board)):
                     return False
         return True
+
+    def read_board(self, file):
+        board = []
+        for line in file:
+            board.append(line.strip().split(' '))
+        return board

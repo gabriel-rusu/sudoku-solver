@@ -1,29 +1,16 @@
 from models.sudoku import Sudoku
-import os
-import time
+from utils.tools import solve
+from tests import tester
+import argparse
 
-def display(board):
-    for line in board:
-        for element in line:
-            print(element, end=' ')
-        print()
+parser = argparse.ArgumentParser()
+parser.add_argument('--test', help='Runs a specific test by number or all if -1 is specified:', type=int)
+parser.add_argument('--filepath', help='Reads the sudoku board from the specified file path and solves it:', type=str)
+parser.parse_args()
 
-TEST_FOLDER = 'solver/tests/data'
-all_options = {str(i) for i in range(1, 10)}
+args = parser.parse_args()
+if args.test:
+    tester.run_tests(args.test)
+elif args.file:
+    solve(open(args.file))
 
-for test in os.listdir(TEST_FOLDER):
-    print('\n\nSudoku puzzle')
-    with open(os.path.join(TEST_FOLDER, test)) as file:
-        board = []
-        for line in file:
-            board.append(line.strip().split(' '))
-        display(board)
-        solver = Sudoku()
-        start = time.time()
-        solver.solveSudoku(board)
-        end = time.time()
-        print('Solved: ~', int((end - start) * 1000), 'ms')
-        display(board)
-
-        print('Is valid solution? ', solver.validSudoku(board, all_options))
-    
