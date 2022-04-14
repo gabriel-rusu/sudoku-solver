@@ -4,7 +4,7 @@ import time
 from utils.tools import solve
 
 TEST_FOLDER = 'solver/tests/data/'
-all_options = {str(i) for i in range(1, 10)}
+
 
 
 def run_tests(test_no=-1):
