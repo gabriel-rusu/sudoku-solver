@@ -11,7 +11,7 @@ def display(board):
         print()
 
 
-def solve(file):
+def process(file):
     print('\n\nSudoku board to solve:')
     sudoku = Sudoku()
     board = sudoku.read_board(file)
