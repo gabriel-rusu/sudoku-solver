@@ -39,11 +39,31 @@ To run and modify the project easily you should install:
   - [Python 3](https://www.python.org/downloads/)
 
 ## 🔧 Running the tests <a name = "tests"></a>
-Explain how to run the automated tests for this system.
-
+The current script has 5 files that each contain a sudoku board. To run all tests open a terminal at the project folder and run the following command:
+  - on Windows:
+    ```
+    py solver/main.py --test -1
+    ```
+  - on MacOS/Linux:
+    ```
+    python3 solver/main.py --test -1
+    ```
+To find more about the way this script runs read the following section.
 
 ## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system.
+The script currently provides 2 options of running:
+  - --filepath - which allows you to specify the path to a file which contains the board you want the program to solve
+  - --test - which allow you to specify the number of the test you want the script to solve (tests can be found in the [data](solver/tests/data/) folder)
+
+If you want to find more about the command line argument run the following command:
+  - on Windows:
+    ```
+    py solver/main.py -h
+    ```
+  - on MacOS/Linux:
+    ```
+    python3 solver/main.py -h
+    ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Python 3](https://www.python.org/downloads/) - which contains the PVM (Python virtual machine)
