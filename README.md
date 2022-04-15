@@ -66,7 +66,7 @@ If you want to find more about the command line argument run the following comma
     ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [Python 3](https://www.python.org/downloads/) - which contains the PVM (Python virtual machine)
+- [Python 3](https://www.python.org/downloads/) - which contains the python virtual machine (PVM) necessary to run the app
 
 
 ## ✍️ Authors <a name = "authors"></a>
